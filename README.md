@@ -31,6 +31,7 @@ Boilerplate with Laravel as Backend and React as Frontend
 - composer update
 
 # Update AppServiceProvider
+use Illuminate\Support\Facades\URL;
 public function boot(): void
 {
     if ($this->app->environment('production')) {
@@ -68,7 +69,7 @@ APP_ENV=local
 # APP_ENV=production
 
 APP_URL=http://localhost:8080
-# APP_URL=https://laravel-142436171314.europe-west1.run.app:8080
+# APP_URL=https://react-app-ufgzz.ondigitalocean.app
 
 DB_CONNECTION=sqlite
 DB_DATABASE=./database/database.sqlite
@@ -84,7 +85,7 @@ DB_DATABASE=./database/database.sqlite
 
 | Description | Link |
 |-------------|------|
-| Remote | https://react-app-cr3dx.ondigitalocean.app/ |
+| Remote | https://react-app-ufgzz.ondigitalocean.app |
 | User | test@example.com |
 | Password | password |
 
