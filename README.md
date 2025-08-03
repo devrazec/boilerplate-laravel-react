@@ -23,14 +23,15 @@ Boilerplate with Laravel as Backend and React as Frontend
 - npm run build
 
 # Update composer.json
-- Edit composer.json
+```
     "require": {
         "ext-pdo_sqlite": "*",
         "ext-sqlite3": "*"  
-
+```
 - composer update
 
 # Update AppServiceProvider
+```
 use Illuminate\Support\Facades\URL;
 public function boot(): void
 {
@@ -38,12 +39,11 @@ public function boot(): void
         URL::forceScheme('https');
     }
 }
-
+```
 # Update composer.json
 "post-create-project-cmd": [
     "@php artisan key:generate --ansi",
     "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-    "@php -r \"file_exists('workspace/database/database.sqlite') || touch('workspace/database/database.sqlite');\"",
     "@php artisan migrate --graceful --ansi",
     "@php artisan db:seed --ansi"
 ],
@@ -58,22 +58,39 @@ public function boot(): void
 
 # Run Laravel Localhost
 
-php artisan serve --port=8080
-php artisan serve --host=0.0.0.0 --port=8080
+- php artisan serve --port=8080
+- php artisan serve --host=0.0.0.0 --port=8080
 
 # Setup .env
 
 * Edit .env file
 
-APP_ENV=local
-# APP_ENV=production
+- APP_ENV=local
+- APP_ENV=production
 
-APP_URL=http://localhost:8080
-# APP_URL=https://react-app-ufgzz.ondigitalocean.app
+- APP_URL=http://localhost:8080
+- APP_URL=https://react-app-ufgzz.ondigitalocean.app
 
-DB_CONNECTION=sqlite
-DB_DATABASE=./database/database.sqlite
-# DB_DATABASE=../workspace/database/database.sqlite
+- DB_CONNECTION=sqlite
+- DB_DATABASE=./database/database.sqlite
+- DB_DATABASE=../workspace/database/database.sqlite
+
+# Update vite.config.js
+```
+server: {
+    host: '0.0.0.0',
+    port: 5173,
+    strictPort: true,
+    https: false,
+    origin: 'http://localhost:5173',
+    cors: true,
+    hmr: {
+        protocol: 'ws',
+        host: 'localhost',
+        clientPort: 5173,
+    },
+},
+```
 
 # View Interface
 
@@ -92,3 +109,6 @@ DB_DATABASE=./database/database.sqlite
 ![Pic1](./public/img/digitalocean.png)  
 
 ![Pic2](./public/img/react.png)  
+
+# Digital Ocean Build Command
+touch database/database.sqlite && npm run build && php artisan migrate --graceful --ansi --force && php artisan db:seed --ansi --force
