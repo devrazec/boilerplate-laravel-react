@@ -6,6 +6,7 @@ Boilerplate with Laravel as Backend and React as Frontend
 * Vite 6
 * Sqlite
 
+# Install Laravel + React
 - composer create laravel/laravel:^12.0 .
 - composer require laravel/breeze --dev
 
@@ -14,6 +15,7 @@ Boilerplate with Laravel as Backend and React as Frontend
 - php artisan db:seed
 - composer require fakerphp/faker
 
+# Install Material UI
 - npm install @mui/material @emotion/react @emotion/styled
 - npm install @mui/icons-material
 - npm install @mui/x-data-grid
@@ -21,6 +23,14 @@ Boilerplate with Laravel as Backend and React as Frontend
 - npm install dayjs
 
 - npm run build
+
+# Install Font Roboto
+- resources/views/app.blade.php
+```
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+```
 
 # Update composer.json
 ```
@@ -40,13 +50,16 @@ public function boot(): void
     }
 }
 ```
+
 # Update composer.json
+```
 "post-create-project-cmd": [
     "@php artisan key:generate --ansi",
     "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
     "@php artisan migrate --graceful --ansi",
     "@php artisan db:seed --ansi"
 ],
+```
 
 # Clean Cache
 
