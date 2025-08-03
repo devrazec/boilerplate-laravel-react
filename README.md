@@ -21,6 +21,7 @@ Boilerplate with Laravel as Backend and React as Frontend
 - npm install @mui/x-data-grid
 - npm install @mui/x-date-pickers
 - npm install dayjs
+- npm install @fontsource/roboto
 
 - npm run build
 
