@@ -357,18 +357,19 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             </div> */}
 
                             <Hero />
-                        <Divider />
+                            
+                            <Divider />
 
                             <Features />
-                            
+
                         </main>
 
                         {/* <footer className="py-16 text-center text-sm text-black dark:text-white/70">
                             Laravel v{laravelVersion} (PHP v{phpVersion})
                         </footer> */}
-                        
 
-                        
+
+
                         <Footer />
                     </div>
                 </div>

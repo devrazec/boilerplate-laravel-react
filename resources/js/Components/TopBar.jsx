@@ -78,22 +78,38 @@ export default function TopBar() {
               alignItems: 'center',
             }}
           >
-            
-              <>
-                <Link
-                  href={route('login')}
-                  className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                >
-                  Log in
-                </Link>
-                <Link
-                  href={route('register')}
-                  className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
-                >
-                  Register
-                </Link>
-              </>
-     
+
+            <>
+              {/* <Link
+                href={route('login')}
+                className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+              >
+                Log in
+              </Link>
+              <Link
+                href={route('register')}
+                className="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+              >
+                Register
+              </Link> */}
+
+              <MenuItem>
+                  <Link href={route('login')} style={{ textDecoration: 'none', width: '100%' }}>
+                    <Button color="primary" variant="outlined">
+                      Login
+                    </Button>
+                  </Link>
+                </MenuItem>
+
+                <MenuItem>
+                  <Link href={route('register')} style={{ textDecoration: 'none', width: '100%' }}>
+                    <Button color="primary" variant="contained">
+                      Register
+                    </Button>
+                  </Link>
+                </MenuItem>
+            </>
+
             {/*  <Button color="primary" variant="text" size="small">
               Sign in
             </Button>
@@ -127,13 +143,13 @@ export default function TopBar() {
                   </IconButton>
                 </Box>
 
-                <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
+                <MenuItem>Home</MenuItem>
+                {/* <MenuItem>Testimonials</MenuItem>
                 <MenuItem>Highlights</MenuItem>
                 <MenuItem>Pricing</MenuItem>
                 <MenuItem>FAQ</MenuItem>
                 <MenuItem>Blog</MenuItem>
-                <Divider sx={{ my: 3 }} />
+                <Divider sx={{ my: 3 }} /> 
                 <MenuItem>
                   <Button color="primary" variant="contained" fullWidth>
                     Sign up
@@ -143,7 +159,24 @@ export default function TopBar() {
                   <Button color="primary" variant="outlined" fullWidth>
                     Sign in
                   </Button>
+                </MenuItem>*/}
+
+                <MenuItem>
+                  <Link href={route('login')} style={{ textDecoration: 'none', width: '100%' }}>
+                    <Button color="primary" variant="outlined">
+                      Login
+                    </Button>
+                  </Link>
                 </MenuItem>
+
+                <MenuItem>
+                  <Link href={route('register')} style={{ textDecoration: 'none', width: '100%' }}>
+                    <Button color="primary" variant="contained">
+                      Register
+                    </Button>
+                  </Link>
+                </MenuItem>
+                
               </Box>
             </Drawer>
           </Box>
