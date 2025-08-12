@@ -1,5 +1,6 @@
 import * as React from 'react';
 import dayjs from 'dayjs';
+import "dayjs/locale/en";
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -13,12 +14,21 @@ export default function DateForm() {
       <Typography variant="h5" gutterBottom>
         MUI Date Picker with Day.js
       </Typography>
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
+
+      <LocalizationProvider
+        adapterLocale={'en'}
+        dateAdapter={AdapterDayjs}>
         <DatePicker
-          label="Select a date"
+          className=""
+          sx={{
+            borderRadius: "6px",
+            width: '200px'
+          }}
+          //value={fieldDate ? fieldDate : dayjs()}
           value={value}
-          onChange={(newValue) => setValue(newValue)}
-          renderInput={(params) => <TextField {...params} fullWidth />}
+          views={['year', 'month', 'day']}
+          format="DD/MM/YYYY"
+          onChange={(e) => setValue(e)}
         />
       </LocalizationProvider>
     </Container>

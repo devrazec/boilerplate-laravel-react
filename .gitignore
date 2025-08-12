@@ -66,9 +66,9 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-# .env
-# .env.*
-# !.env.example
+.env
+.env.*
+!.env.example
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -141,9 +141,9 @@ vite.config.ts.timestamp-*
 # Laravel
 *.log
 .DS_Store
-# .env
-# .env.backup
-# .env.production
+.env
+.env.backup
+.env.production
 .phpactor.json
 .phpunit.result.cache
 /.fleet

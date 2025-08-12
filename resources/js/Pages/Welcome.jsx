@@ -1,4 +1,9 @@
 import { Head, Link } from '@inertiajs/react';
+import Divider from '@mui/material/Divider';
+import TopBar from '@/Components/TopBar';
+import Hero from '@/Components/Hero';
+import Features from '@/Components/Features';
+import Footer from '@/Components/Footer';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
@@ -14,16 +19,18 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
     return (
         <>
+            <TopBar />
+
             <Head title="Welcome" />
             <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
-                <img
+                {/* <img
                     id="background"
                     className="absolute -left-20 top-0 max-w-[877px]"
                     src="https://laravel.com/assets/img/welcome/background.svg"
-                />
+                /> */}
                 <div className="relative flex min-h-screen flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
                     <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                        <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+                        {/* <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                             <div className="flex lg:col-start-2 lg:justify-center">
                                 <svg
                                     className="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]"
@@ -62,10 +69,10 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                     </>
                                 )}
                             </nav>
-                        </header>
+                        </header> */}
 
                         <main className="mt-6">
-                            <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
+                            {/* <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
                                 <a
                                     href="https://laravel.com/docs"
                                     id="docs-card"
@@ -347,12 +354,22 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
+
+                            <Hero />
+                        <Divider />
+
+                            <Features />
+                            
                         </main>
 
-                        <footer className="py-16 text-center text-sm text-black dark:text-white/70">
+                        {/* <footer className="py-16 text-center text-sm text-black dark:text-white/70">
                             Laravel v{laravelVersion} (PHP v{phpVersion})
-                        </footer>
+                        </footer> */}
+                        
+
+                        
+                        <Footer />
                     </div>
                 </div>
             </div>

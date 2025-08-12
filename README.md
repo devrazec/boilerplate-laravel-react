@@ -22,15 +22,17 @@ Boilerplate with Laravel as Backend and React as Frontend
 - npm install @mui/x-date-pickers
 - npm install dayjs
 - npm install @fontsource/roboto
+- npm install @mui/x-charts
+- npm install @mui/x-tree-view
 
 - npm run build
 
-# Install Font Roboto
-- resources/views/app.blade.php
+# Update /resources/js/app.jsx
 ```
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 ```
 
 # Update composer.json
@@ -74,6 +76,7 @@ public function boot(): void
 
 - php artisan serve --port=8080
 - php artisan serve --host=0.0.0.0 --port=8080
+- npm run dev
 
 # Setup .env
 
